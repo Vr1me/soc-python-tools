@@ -1,0 +1,6 @@
+Failed login attempt from 192.168.1.1
+User admin logged in successfully
+Failed login attempt from 10.0.0.5
+Connection established from 172.16.0.1
+Failed login attempt from 192.168.1.100
+Service started successfully
