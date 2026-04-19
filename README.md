@@ -16,6 +16,9 @@ Usage: python log_search.py
 Runs Nmap scan on a target and saves results to a file.
 Usage: python nmap_scan.py
 
+## Study Notes
+- [MITRE ATT&CK Notes](mitre_notes.md) — Tactics, Techniques, CAR, D3FEND
+
 ## Author
 Mykhailo Vlasov — Junior SOC Analyst
 GitHub: github.com/Vr1me
