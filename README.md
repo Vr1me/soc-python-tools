@@ -19,6 +19,14 @@ Usage: python nmap_scan.py
 ## Study Notes
 [MITRE ATT&CK Notes](mitre_notes.md) — Tactics, Techniques, CAR, D3FEND
 
+### auth_monitor.py
+Analyzes Linux `auth.log` files to detect SSH brute-force attempts.
+- Identifies failed login attempts and groups them by IP address.
+- Flags IPs exceeding a threshold with a WARNING status.
+- Exports analysis results to a CSV report.
+Usage: python auth_monitor.py
+
+
 ## Author
 Mykhailo Vlasov — Junior SOC Analyst
 GitHub: github.com/Vr1me

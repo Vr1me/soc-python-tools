@@ -1,0 +1,21 @@
+# SSH Auth Log Analyzer (Simple IDS)
+
+## Overview
+A lightweight Python security tool designed to parse Linux `auth.log` files, identify failed SSH login attempts, and flag potential Brute-force attacks.
+
+## Features
+- **Regex Parsing:** Extracts IP addresses from standard `sshd` failed password logs.
+- **Threshold Detection:** Automatically flags IPs with more than 5 failed attempts.
+- **CSV Reporting:** Generates a structured report for further forensic analysis.
+- **Console Alerting:** Visual 'WARNING' highlights in the terminal.
+
+## How to Use
+1. Place your `auth.log` in the same directory (or update the `LOG_FILE` path in the script).
+2. Run the script:
+   ```bash
+   python3 auth_monitor.py
+   ```
+3. Check `failed_logins.csv` for the generated report.
+
+## Use Case for SOC
+This tool can be integrated into a cron job to provide daily reports of suspicious network activity or as a precursor to automated blocking via `iptables`.
