@@ -1,0 +1,20 @@
+{
+  "host": "scanme.nmap.org",
+  "scan_time": "2026-04-29 10:48:56",
+  "elapsed_seconds": 67.87,
+  "total_open": 3,
+  "ports": [
+    {
+      "port": 22,
+      "service": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+    },
+    {
+      "port": 9929,
+      "service": "\u0001\u0001\u0000\u0018#fiž\u0000\u0000\u0000\u0000\b\u001b\u0010+G$'q\u0015<h-*>\u0013\t\u0003K\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000!ے\u00130"
+    },
+    {
+      "port": 31337,
+      "service": "unknown"
+    }
+  ]
+}

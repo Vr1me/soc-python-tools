@@ -1,0 +1,139 @@
+# organize.ps1
+# Run this from inside C:\Users\vlaso\Desktop\soc-python-tools
+# Command: powershell -ExecutionPolicy Bypass -File organize.ps1
+
+Write-Host "`n[*] Organizing soc-python-tools..." -ForegroundColor Cyan
+
+# ─── Create folders ───────────────────────────────────────────────────────────
+$folders = @(
+    "log-analysis",
+    "network",
+    "monitoring",
+    "writeups",
+    "samples"
+)
+
+foreach ($folder in $folders) {
+    if (-not (Test-Path $folder)) {
+        New-Item -ItemType Directory -Name $folder | Out-Null
+        Write-Host "  [+] Created folder: $folder" -ForegroundColor Green
+    }
+}
+
+# ─── Move files ───────────────────────────────────────────────────────────────
+
+# log-analysis/
+$logFiles = @("log_parser.py", "log_search.py", "generate_test_log.py")
+foreach ($f in $logFiles) {
+    if (Test-Path $f) { Move-Item $f "log-analysis\" -Force; Write-Host "  [>] $f --> log-analysis/" }
+}
+
+# network/
+$netFiles = @("NetPortScanner.py", "NetPortScannerREADME.md", "nmap_scan.py", "dns_lookup.py", "phone_scan.py", "wsl_scan.py", "results.py")
+foreach ($f in $netFiles) {
+    if (Test-Path $f) { Move-Item $f "network\" -Force; Write-Host "  [>] $f --> network/" }
+}
+
+# monitoring/
+$monFiles = @("auth_monitor.py")
+foreach ($f in $monFiles) {
+    if (Test-Path $f) { Move-Item $f "monitoring\" -Force; Write-Host "  [>] $f --> monitoring/" }
+}
+
+# writeups/
+$writeupFiles = @("htb-dancing-writeup.md", "htb-starting-point.md", "mitre_notes.md")
+foreach ($f in $writeupFiles) {
+    if (Test-Path $f) { Move-Item $f "writeups\" -Force; Write-Host "  [>] $f --> writeups/" }
+}
+
+# samples/ (test data, not real logs)
+$sampleFiles = @("access.log", "log.txt", "nmap_results.txt", "alerts.csv")
+foreach ($f in $sampleFiles) {
+    if (Test-Path $f) { Move-Item $f "samples\" -Force; Write-Host "  [>] $f --> samples/" }
+}
+
+# ─── Create .gitignore ────────────────────────────────────────────────────────
+$gitignore = @"
+# Generated files - do not commit
+samples/
+*.csv
+*.log
+__pycache__/
+*.pyc
+.env
+"@
+
+Set-Content -Path ".gitignore" -Value $gitignore
+Write-Host "  [+] Created .gitignore" -ForegroundColor Green
+
+# ─── Create main README.md ────────────────────────────────────────────────────
+$readme = @"
+# SOC Python Tools
+
+A collection of security and network tools built while studying for SOC/cybersecurity roles.
+
+## Structure
+
+| Folder | Description |
+|--------|-------------|
+| log-analysis/ | Log parsing and brute force detection |
+| network/ | Port scanning, DNS lookup, network recon |
+| monitoring/ | Auth monitoring and alerting |
+| writeups/ | HackTheBox writeups and study notes |
+
+## Tools
+
+### Log Analysis
+| File | Description |
+|------|-------------|
+| log_parser.py | Detects brute force attacks from access.log / auth.log |
+| log_search.py | Search and filter log files |
+| generate_test_log.py | Generates sample logs for testing |
+
+### Network
+| File | Description |
+|------|-------------|
+| NetPortScanner.py | TCP/SYN/UDP port scanner with banner grabbing |
+| nmap_scan.py | Automates nmap scanning |
+| dns_lookup.py | DNS enumeration |
+| phone_scan.py | Phone/subnet scanner |
+| wsl_scan.py | WSL network scanner |
+
+### Monitoring
+| File | Description |
+|------|-------------|
+| auth_monitor.py | Monitors SSH login attempts in real time |
+
+## HTB Writeups
+- [Starting Point](writeups/htb-starting-point.md)
+- [Dancing](writeups/htb-dancing-writeup.md)
+
+## Study Notes
+- [MITRE ATT&CK](writeups/mitre_notes.md)
+
+## Usage
+
+\`\`\`bash
+# Detect brute force in a log file
+python log-analysis/log_parser.py --file access.log
+
+# Run port scanner
+python network/NetPortScanner.py --target 192.168.1.1
+
+# Monitor auth logs live
+python monitoring/auth_monitor.py
+\`\`\`
+"@
+
+Set-Content -Path "README.md" -Value $readme
+Write-Host "  [+] Updated README.md" -ForegroundColor Green
+
+# ─── Git commit ───────────────────────────────────────────────────────────────
+Write-Host "`n[*] Committing to git..." -ForegroundColor Cyan
+git add .
+git commit -m "refactor: organize repo into folders by category"
+git push
+
+Write-Host "`n[OK] Done! Your repo is now organized." -ForegroundColor Green
+Write-Host "      Folder structure:" -ForegroundColor Gray
+Get-ChildItem -Directory | ForEach-Object { Write-Host "      - $($_.Name)/" -ForegroundColor Gray }

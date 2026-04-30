@@ -1,0 +1,152 @@
+{
+  "host": "localhost",
+  "scan_time": "2026-04-29 10:34:46",
+  "elapsed_seconds": 35.02,
+  "total_open": 36,
+  "ports": [
+    {
+      "port": 135,
+      "service": "RPC"
+    },
+    {
+      "port": 445,
+      "service": "SMB"
+    },
+    {
+      "port": 5040,
+      "service": "Windows DAX API"
+    },
+    {
+      "port": 5227,
+      "service": "Google Play"
+    },
+    {
+      "port": 5228,
+      "service": "Google Play"
+    },
+    {
+      "port": 5238,
+      "service": "Google Play"
+    },
+    {
+      "port": 5261,
+      "service": "Google Play"
+    },
+    {
+      "port": 5262,
+      "service": "Google Play"
+    },
+    {
+      "port": 5276,
+      "service": "Google Play"
+    },
+    {
+      "port": 5278,
+      "service": "Google Play"
+    },
+    {
+      "port": 5287,
+      "service": "Google Play"
+    },
+    {
+      "port": 5288,
+      "service": "Google Play"
+    },
+    {
+      "port": 5939,
+      "service": "VNC"
+    },
+    {
+      "port": 6463,
+      "service": "Discord"
+    },
+    {
+      "port": 7680,
+      "service": "Windows Update P2P"
+    },
+    {
+      "port": 8000,
+      "service": "HTTP-Alt"
+    },
+    {
+      "port": 8065,
+      "service": "Mattermost"
+    },
+    {
+      "port": 8080,
+      "service": "HTTP/1.1 200 OK"
+    },
+    {
+      "port": 8089,
+      "service": "Splunk"
+    },
+    {
+      "port": 8191,
+      "service": "League of Legends"
+    },
+    {
+      "port": 8194,
+      "service": "Bloomberg"
+    },
+    {
+      "port": 9010,
+      "service": "Spiketrap"
+    },
+    {
+      "port": 9180,
+      "service": "HTTP-Alt"
+    },
+    {
+      "port": 27036,
+      "service": "Steam Remote Play"
+    },
+    {
+      "port": 27060,
+      "service": "Steam"
+    },
+    {
+      "port": 45654,
+      "service": "Samsung Smart TV"
+    },
+    {
+      "port": 49664,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 49665,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 49666,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 49667,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 49668,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 49683,
+      "service": "Windows RPC"
+    },
+    {
+      "port": 54908,
+      "service": "Corsair iCUE"
+    },
+    {
+      "port": 54909,
+      "service": "Corsair iCUE"
+    },
+    {
+      "port": 63499,
+      "service": "Windows dynamic"
+    },
+    {
+      "port": 64203,
+      "service": "Windows dynamic"
+    }
+  ]
+}

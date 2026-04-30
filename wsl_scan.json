@@ -1,0 +1,72 @@
+{
+  "subnet": "172.31.208.0/20",
+  "scan_time": "2026-04-29 10:46:36",
+  "elapsed_seconds": 7.59,
+  "hosts": {
+    "172.31.208.1": {
+      "hostname": "Vr1me-.mshome.net",
+      "open_ports": [
+        {
+          "port": 135,
+          "service": "RPC"
+        },
+        {
+          "port": 139,
+          "service": "NetBIOS"
+        },
+        {
+          "port": 445,
+          "service": "SMB"
+        },
+        {
+          "port": 5040,
+          "service": "Windows DAX API"
+        },
+        {
+          "port": 7680,
+          "service": "Windows Update P2P"
+        },
+        {
+          "port": 8000,
+          "service": "HTTP-Alt"
+        },
+        {
+          "port": 8089,
+          "service": "Splunk"
+        },
+        {
+          "port": 8191,
+          "service": "League of Legends"
+        },
+        {
+          "port": 27036,
+          "service": "Steam Remote Play"
+        },
+        {
+          "port": 49664,
+          "service": "Windows RPC"
+        },
+        {
+          "port": 49665,
+          "service": "Windows RPC"
+        },
+        {
+          "port": 49666,
+          "service": "Windows RPC"
+        },
+        {
+          "port": 49667,
+          "service": "Windows RPC"
+        },
+        {
+          "port": 49668,
+          "service": "Windows RPC"
+        },
+        {
+          "port": 49683,
+          "service": "Windows RPC"
+        }
+      ]
+    }
+  }
+}
