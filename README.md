@@ -6,6 +6,7 @@ A growing collection of Python scripts for SOC Analyst tasks — built while stu
 
 ```
 soc-python-tools/
+├── folder-monitor-vt/  # Real-time folder monitor with VirusTotal API
 ├── log-analysis/       # Log parsing and brute force detection
 ├── network/            # Port scanning, DNS, network recon
 ├── monitoring/         # Auth log monitoring and alerting
@@ -14,6 +15,11 @@ soc-python-tools/
 ```
 
 ## Tools
+
+### Folder Monitor + VirusTotal ⭐
+| Script | Description |
+|--------|-------------|
+| [`folder-monitor-vt/`](folder-monitor-vt/) | Watches a folder in real time. On new file: computes SHA256, queries VirusTotal API, raises ALERT if any AV engine flags the file. Tested against EICAR (53/59 detections) |
 
 ### Log Analysis
 | Script | Description |
@@ -37,6 +43,12 @@ soc-python-tools/
 ## Usage
 
 ```bash
+# Real-time folder monitoring with VirusTotal
+cd folder-monitor-vt
+pip install -r requirements.txt
+cp .env.example .env   # add your VirusTotal API key
+python monitor.py
+
 # Detect brute force attacks in a log file
 python log-analysis/log_parser.py --file access.log
 
